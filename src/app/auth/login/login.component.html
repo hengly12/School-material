@@ -1,0 +1,16 @@
+<body>
+  <div class="login-container">
+      <i class="fa-solid fa-school"></i>
+      <form #f="ngForm"  class="form">
+          <div class="caption">
+              <h3>Sign in with your email.</h3>
+              <p>Don't have any account? <span [routerLink]="['../signup']" routerLinkActive="active">Register</span></p>
+          </div>
+          <form class="form-input" #f="ngForm">
+            <input type="email" name="email" [(ngModel)]="email" id="email" placeholder="Email address" class="email">
+            <input type="password"  name="Password" [(ngModel)]="password" id="password" placeholder="Password" class="password">
+          </form>
+          <button type="submit" (click)="login()" [disabled]="f.invalid">Sign in</button>
+      </form>
+  </div>
+</body>

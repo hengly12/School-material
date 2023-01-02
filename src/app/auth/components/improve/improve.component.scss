@@ -1,0 +1,139 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  // justify-content: space-evenly;
+
+  background-image: url(../../../../assets/background-img.webp);
+  .improve-grade{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    h3{
+      width: 500px;
+      font-size: 30px;
+      font-family: 'Open Sans', sans-serif;
+      color: #454E57;
+
+    }
+    p{
+      width: 500px;
+      font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
+      color: #939B9E;
+    }
+    .btn-started{
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      gap: 20px;
+      .btn-get-start{
+
+        padding: 10px 20px;
+        border: 1px solid #5459E8;
+        background: #5459E8;
+        border-radius: 10px;
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .video{
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        i{
+          font-size: 35px;
+          color: #FCB913;
+        }
+        p{
+          font-size: 14px;
+        }
+      }
+    }
+    .quality{
+      width: 500px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 25px;
+      .check-quality{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        i{
+          font-size: 20px;
+          color: #535AE6;
+        }
+        p{
+          width: auto;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .pic{
+    img{
+      height: 350px;
+      width: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px){
+  body{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  body .improve-grade{
+    margin-top: 60px;
+  }
+  body .improve-grade h3{
+    width: 100%;
+    text-align: center;
+  }
+  body .improve-grade p{
+    width: 100%;
+    text-align: center;
+  }
+  body .improve-grade .btn-started {
+    padding: 0 40px;
+
+  }
+  body .improve-grade .quality{
+    padding: 0 14px;
+  }
+}
+@media screen and (max-width: 500px){
+  body{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+
+  }
+
+  body .improve-grade h3{
+
+    text-align: center;
+  }
+  body .improve-grade p{
+
+    text-align: center;
+  }
+  body .pic img{
+    height: 200px;
+  }
+}

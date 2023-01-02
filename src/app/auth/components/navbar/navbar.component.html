@@ -1,0 +1,41 @@
+<body>
+  <div class="navbar-container">
+    <div class="logo">
+      <div class="burger" (click)="toggleMenu()" >
+        <i class="fa-solid fa-bars" *ngIf="menuo"> </i>
+        <i class="fa-solid fa-xmark" *ngIf="menuc"></i>
+        <!-- <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div> -->
+      </div>
+      <i class="fa-solid fa-school"></i>
+      <p>HENG</p>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Teachers</a></li>
+        <li><a href="#">Classes</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="menu-1" [ngClass]="isMenu?'isMenu':''" >
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Teachers</a></li>
+        <li><a href="#">Classes</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="btn-register">
+      <button class="btn-login" [routerLink]="['../login']" routerLinkActive="active">Login</button>
+      <button class="btn-sign-up" [routerLink]="['../signup']" routerLinkActive="active">Sign Up</button>
+
+    </div>
+  </div>
+</body>
+
+
+

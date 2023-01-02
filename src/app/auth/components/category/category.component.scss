@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .caption{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 0;
+        h2{
+            font-size: 35px;
+            padding: 20px 0;
+            font-family: 'Open Sans', sans-serif;
+            color: #454D56;
+        }
+        p{
+            font-size: 14px;
+            width: 400px;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            color: #8B9399;
+        }
+    }
+    .box-category-1{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 0;
+        .box{
+
+            margin-left: 20px;
+            height: 140px;
+            width: 250px;
+            background: #fff;
+
+            box-shadow: 0px 0px 5px 0.2px rgb(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            .box-1{
+                height: 100px;
+
+                display: flex;
+                flex-direction: row;
+
+                justify-content: center;
+                gap: 10px;
+
+                i{
+                    font-size: 25px;
+                    padding: 13px 0;
+                    color: #FF66F9;
+                }
+                .box-cap{
+                    h4{
+                        font-size: 15px;
+                        width: 170px;
+                        padding: 10px 0;
+                        color: #454C56;
+                        font-family: 'Open Sans', sans-serif;
+                    }
+                    p{
+                        color: #6C757D;
+                        font-size: 14px;
+                        font-family: 'Open Sans', sans-serif;
+                    }
+                }
+            }
+        }
+        .box:hover{
+            background: #5459E8;
+
+        }
+    }
+}
+@media screen and (max-width: 1024px){
+    body{
+        height: auto;
+
+    }
+    body .caption h2{
+        text-align: center;
+    }
+    body .box-category-1{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+
+    }
+
+}
+@media screen and (max-width: 500px){
+
+    body .box-category-1{
+
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin-left: -22px;
+
+    }
+    body .box-category-1 .box{
+        width: 215px;
+    }
+}

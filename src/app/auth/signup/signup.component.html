@@ -1,0 +1,27 @@
+<body>
+  <div class="signup-container">
+    <div class="img">
+      <h3>Study free for 15 Days</h3>
+      <img src="../.../../../../assets/singnup.webp" alt="">
+    </div>
+    <form class="form-signup" [formGroup]="profileForm">
+      <i class="fa-solid fa-school"></i>
+      <h4>Sign Up to your account</h4>
+      <p>Already have an account? <span [routerLink]="['../login']" routerLinkActive="active">Login</span></p>
+      <div class="form-input">
+        <input type="text" name="" id="last_name" placeholder="First Name" class="first" formControlName="last_name">
+        <input type="text" name="" id="first_name" placeholder="Last Name" class="last" formControlName="first_name">
+      </div>
+      <div class="form-input1">
+        <input type="email" name="email" id="email" placeholder="Email Address" formControlName="email">
+        <input type="password" name="password" id="password" placeholder="Password" formControlName="password">
+        <input type="password" name="" id="re-password" placeholder="Re-Password" formControlName="Repassword">
+      </div>
+      <div class="agree-service">
+        <input type="checkbox" name="" id="checkbox" formControlName="checkbox">
+        <p>I agree to the <span class="span-check">Term of Service</span>and <span class="span-check">Privacy Policy</span></p>
+      </div>
+      <button type="submit" (click)="register(profileForm.value)">Sign Up</button>
+    </form>
+  </div>
+</body>
