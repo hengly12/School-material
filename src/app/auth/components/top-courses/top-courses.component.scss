@@ -12,33 +12,37 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px 80px;
+        padding: 20px 20px;
         h3{
-            width: 400px;
+            width: 100%;
             font-size: 35px;
+            padding: 20px 0;
             color: #fff;
             font-family: 'Open Sans', sans-serif;
             text-align: center;
+            margin: 0;
         }
         p{
-            width: 650px;
+            width: 100%;
             font-size: 14px;
             color: #fff;
             font-family: 'Open Sans', sans-serif;
             text-align: center;
+            margin: 0;
         }
     }
     .box-courses{
         height: 80vh;
+        width: 100%;
         gap: 80px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         .box{
-            height: 400px;
-            width: 400px;
-            padding: 0 50px;
+            height: 310px;
+            width: 23%;
+            padding: 0px 30px;
             background: #fff;
             display: flex;
             flex-direction: column;
@@ -46,7 +50,7 @@ body{
 
             img{
 
-                padding: 10px 0;
+                padding: 0px 0;
             }
             .caption{
                 display: flex;
@@ -56,16 +60,19 @@ body{
                     font-size: 20px;
                     color: #454E57;
                     font-family: 'Open Sans', sans-serif;
+                    margin: 0;
                 }
                 p{
                     color: #454E57;
                     font-size: 14px;
                     font-family: 'Open Sans', sans-serif;
+                    margin: 0;
                 }
                 h5{
                     color: #454E57;
                     font-size: 14px;
                     font-family: 'Open Sans', sans-serif;
+                    margin: 0;
                 }
             }
 
@@ -83,8 +90,20 @@ body{
         display: flex;
         flex-direction: column;
     }
-
-    body .top p{
-        width: 450px;
+    body .box-courses{
+      width: 100%;
     }
+
+}
+@media screen and (max-width: 950px){
+  body .box-courses .box{
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 500px){
+  body .box-courses .box{
+    width: 90%;
+  }
+
 }

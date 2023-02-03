@@ -11,6 +11,7 @@
   width: 100%;
 
   .caption-container{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,23 +19,28 @@
     padding: 30px 0;
     gap: 5px;
     h4{
+      width: 100%;
       color: #545AE8;
       font-size: 15px;
       font-family: 'Open Sans', sans-serif;
-
+      margin: 0;
+      text-align: center;
     }
     h2{
-      width: 480px;
+      width: 100%;
+      text-align: center;
       color: #454E57;
-      font-size: 35px;
+      font-size: 30px;
       font-family: 'Open Sans', sans-serif;
-
+      margin: 0;
     }
     p{
-      width: 400px;
+      width: 100%;
+      text-align: center;
       font-size: 14px;
       color: #848990;
       font-family: 'Open Sans', sans-serif;
+      margin: 0;
     }
   }
   .swiper {
@@ -95,6 +101,7 @@
             font-size: 12px;
             font-family: 'Open Sans', sans-serif;
             color: #7A7E87;
+            margin: 0;
           }
         }
       }
@@ -111,6 +118,7 @@
           font-size: 12px;
           font-family: 'Open Sans', sans-serif;
           color: #7A7E87;
+          margin: 0;
         }
       }
     }
@@ -124,5 +132,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+@media screen and (max-width: 500px){
+  .testimonial .swiper{
+    width: 100%;
   }
 }

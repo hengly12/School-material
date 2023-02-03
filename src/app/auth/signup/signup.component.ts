@@ -55,5 +55,17 @@ export class SignupComponent implements OnInit {
     // this.profileForm.reset()
 
   }
+/////
+  showPassword = false;
+
+  toggleShow(){
+    this.showPassword = !this.showPassword
+  }
+  ////
+  showPassword1 = false;
+
+  toggleShow1(){
+    this.showPassword1 = !this.showPassword1
+  }
 
 }

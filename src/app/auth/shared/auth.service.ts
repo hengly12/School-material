@@ -54,7 +54,7 @@ userData: any = null
             }
           this.setUser(item)
           }
-          this.router.navigate(['../components'])
+          this.router.navigate(['/components'])
         }, err =>{
           alert(err.message);
           this.router.navigate(['signup']);

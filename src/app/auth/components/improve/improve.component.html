@@ -1,30 +1,84 @@
-<body>
-  <div class="improve-grade">
-    <h3>Improve Your Grades with online course</h3>
-    <p>Want to improve your school grades? You need to study harder with the help of great teacher to improve your performance at school.</p>
-    <div class="btn-started">
-      <button class="btn-get-start">Get Started</button>
-      <div class="video">
-        <i class="fa-solid fa-circle-play"></i>
-        <p>Play Video</p>
+
+<div class="container-1">
+  <body>
+    <div class='slider'>
+      <input name="input-slider" id='input-slide-0' type="radio" class='input-slide input-slide-num' >
+      <input name="input-slider" id='input-slide-1' type="radio" class='input-slide input-slide-num' >
+      <input name="input-slider" id='input-slide-2' type="radio" class='input-slide input-slide-num' >
+      <input name="input-slider" id='input-slide-3' type="radio" class='input-slide input-slide-num' >
+      <input name="input-slider" id='input-slide-autoplay' type="radio" class='input-slide' checked>
+      <ul>
+        <li class='slide-0'><img src="../../../../assets/schoolchildren-reading-library_1098-4048.webp" alt=""></li>
+        <li class='slide-1'><img src="../../../../assets/class-6.webp" alt=""></li>
+        <li class='slide-2'><img src="../../../../assets/class-7.webp" alt=""></li>
+        <li class='slide-3'><img src="../../../../assets/class-8.webp" alt=""></li>
+      </ul>
+      <div class='slide-description'>
+        <label class='slide-0'>
+
+        </label>
+        <label class='slide-1'>
+          <!-- <img src="../../../../assets/class-1.jpg" alt=""> -->
+        </label>
+        <label class='slide-2'>
+          <!-- <h1 class="text-slide">CSS SLIDER #3</h1> -->
+        </label>
+        <label class='slide-3'>
+          <!-- <h1 class="text-slide">CSS SLIDER #4</h1> -->
+        </label>
+      </div>
+      <div class='slider-arrow-prev'>
+        <label class='slide-0' for='input-slide-0'></label>
+        <label class='slide-1' for='input-slide-1'></label>
+        <label class='slide-2' for='input-slide-2'></label>
+        <label class='slide-3' for='input-slide-3'></label>
+      </div>
+      <div class='slider-arrow-next'>
+        <label class='slide-0' for='input-slide-0'></label>
+        <label class='slide-1' for='input-slide-1'></label>
+        <label class='slide-2' for='input-slide-2'></label>
+        <label class='slide-3' for='input-slide-3'></label>
+      </div>
+      <div class='slider-dot'>
+        <label class='slide-0' for='input-slide-0'></label>
+        <label class='slide-1' for='input-slide-1'></label>
+        <label class='slide-2' for='input-slide-2'></label>
+        <label class='slide-3' for='input-slide-3'></label>
       </div>
     </div>
-    <div class="quality">
-      <div class="check-quality">
-        <i class="fa-solid fa-circle-check"></i>
-        <p>Certified Teachers</p>
+  </body>
+
+  <div class="container">
+    <div class="improve-grade">
+      <div class="cap-1">
+        <h3>Improve Your Grades with online course</h3>
+        <p>Want to improve your school grades? You need to study harder with the help of great teacher to improve your performance at school.</p>
       </div>
-      <div class="check-quality">
-        <i class="fa-solid fa-circle-check"></i>
-        <p>High Quality Video</p>
+      <div class="btn-started">
+        <button class="btn-get-start" [routerLink]="['../signup']" routerLinkActive="active">Get Started</button>
+        <div class="video">
+          <i class="fa-solid fa-circle-play"></i>
+          <p>Play Video</p>
+        </div>
       </div>
-      <div class="check-quality">
-        <i class="fa-solid fa-circle-check"></i>
-        <p>Affordable Price</p>
+      <div class="quality">
+        <div class="check-quality">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>Certified Teachers</p>
+        </div>
+        <div class="check-quality">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>High Quality Video</p>
+        </div>
+        <div class="check-quality">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>Affordable Price</p>
+        </div>
       </div>
     </div>
+    <div class="pic">
+      <!-- <img src="../../../assets/pic-1.png" alt=""> -->
+      <p></p>
+    </div>
   </div>
-  <div class="pic">
-    <img src="../../../assets/pic-1.png" alt="">
-  </div>
-</body>
+</div>

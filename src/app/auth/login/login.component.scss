@@ -19,17 +19,21 @@ body{
       align-items: center;
       justify-content: center;
 
-      i{
-          font-size: 50px;
-          padding: 20px 0;
-          color: #1A73E8;
+      // i{
+      //     font-size: 50px;
+      //     padding: 20px 0;
+      //     color: #1A73E8;
 
+      // }
+      svg{
+        fill: #5459E8;
+        padding: 20px 0;
       }
      .form{
           height: 350px;
           width: 30%;
           // background: #1A73E8;
-          box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
           border-radius: 5px;
           display: flex;
           flex-direction: column;
@@ -37,20 +41,24 @@ body{
 
 
           .caption{
+              width: 80%;
+
               display: flex;
               flex-direction: column;
+            margin-top: 30px;
               h3{
-                  font-size: 35px;
-                  font-family: sans-serif;
-                  padding: 20px 0;
+                  font-size: 30px;
+                  font-family: 'Open Sans', sans-serif;
+
                   color: #1A73E8;
               }
               p{
                   font-size: 15px;
-                  font-family: sans-serif;
+                  font-family: 'Open Sans', sans-serif;
                   color: #201F22;
                   span{
                       cursor: pointer;
+                      color: #1A73E8;
                   }
                   span:hover{
                       color: rgb(125, 208, 255);
@@ -72,20 +80,23 @@ body{
                   outline: none;
                   border: 1px solid #E8E8E6;
                   background: #E8E7E9;
+                  font-family: 'Open Sans', sans-serif;
               }
               .password{
                   width: 80%;
+                  display: flex;
+                  flex-direction: row;
                   input{
                       width: 100%;
+
                   }
                   i{
-                      padding: 12px 11px;
-                      position: absolute;
-                      font-size: 15px;
-                      margin-left: -41px;
-                      margin-top: 2px;
-                      background: #E8E8E6;
-
+                    padding: 12px 11px;
+                    position: absolute;
+                    font-size: 20px;
+                    margin-left: -45px;
+                    margin-top: 2px;
+                    cursor: pointer;
                   }
               }
 
@@ -100,12 +111,26 @@ body{
               border: none;
               border-radius: 5px;
               transition: 0.3s;
+              font-family: 'Open Sans', sans-serif;
+              margin-top: 10px;
           }
           button:hover{
               background: transparent;
-              border: 1px solid #005;
+              border: 1px solid #1A73E8;
               color: #000;
           }
       }
   }
 }
+
+@media screen and (max-width: 1024px){
+  body .login-container .form{
+    width: 60%;
+  }
+}
+@media screen and (max-width: 500px){
+  body .login-container .form{
+    width: 90%;
+  }
+}
+

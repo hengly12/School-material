@@ -1,0 +1,34 @@
+<body>
+  <div class="btn-back">
+    <button [routerLink]="['/components']" routerLinkActive="active"><i class="fa-solid fa-arrow-left-long"></i></button>
+  </div>
+  <div class="container">
+    <div class="profile-container">
+      <div class="profile">
+        <div class="image" >
+          <img [src]="dataUser?.files?.downloadUrl ?? 'assets/user.png'" alt="profile" (click)="inputFile.click()">
+          <div class="icon">
+            <i class="fa-solid fa-camera" (click)="inputFile.click()"></i>
+          </div>
+          <input type="file" #inputFile (change)="selectFile($event)" >
+        </div>
+        <div class="image-1" *ngIf="uploaded">
+          <img class="image-uploaded" [src]="preview" alt="" >
+        </div>
+        <div class="name">
+          <p>{{dataUser?.displayName}}</p>
+          <p class="email">{{dataUser?.email}}</p>
+        </div>
+      </div>
+      <div class="box1">
+        <div class="box">
+          <p>Change your profile</p>
+        </div>
+      </div>
+      <div class="btn">
+        <p></p>
+        <button (click)="onSave(profileForm.value)">Save</button>
+      </div>
+    </div>
+  </div>
+</body>

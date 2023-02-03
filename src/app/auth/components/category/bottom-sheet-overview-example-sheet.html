@@ -1,0 +1,30 @@
+
+<mat-nav-list>
+  <a [routerLink]="['../lesson']" routerLinkActive="active" mat-list-item (click)="openLink($event)">
+    <span matListItemTitle></span>
+    <span matLine >Lesson</span>
+  </a>
+
+  <a [routerLink]="['../video']" routerLinkActive="active" mat-list-item (click)="openLink($event)">
+    <span matListItemTitle></span>
+    <span matLine>Video</span>
+  </a>
+
+  <a [routerLink]="['../schedule']" routerLinkActive="active" mat-list-item (click)="openLink($event)">
+    <span matListItemTitle></span>
+    <span matLine>Schedule</span>
+  </a>
+
+  <a [routerLink]="['../online-class']" routerLinkActive="active" mat-list-item (click)="openLink($event)">
+    <span matListItemTitle></span>
+    <span matLine>Online Class</span>
+  </a>
+</mat-nav-list>
+
+<style>
+  @media screen and (max-width: 1000px){
+    mat-nav-list a span{
+      text-align: center;
+    }
+  }
+</style>

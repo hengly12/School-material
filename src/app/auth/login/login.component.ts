@@ -34,4 +34,10 @@ export class LoginComponent implements OnInit {
     this.password ='';
 
   }
+/////
+  showPassword = false;
+
+  toggleShow(){
+    this.showPassword = !this.showPassword
+  }
 }

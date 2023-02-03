@@ -1,0 +1,354 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+      // background-image: linear-gradient(to left, rgb(219, 115, 115),#5459E8);
+  .btn-back{
+    padding: 15px 30px;
+    // position: absolute;
+    button{
+      padding: 10px 30px;
+      background: #5459E8;
+      border-radius: 5px;
+      border: 1px solid #5459E8;
+      cursor: pointer;
+      i{
+        color: #fff;
+        font-size: 16px;
+      }
+      i:hover{
+        color: #000;
+      }
+    }
+    button:hover{
+      background: #cdcef7;
+      color: #000;
+    }
+  }
+  .courses-container{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+
+    .caption{
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      h3{
+        font-size: 28px;
+        margin: 0;
+        color: #454E57;
+      }
+      p{
+        width: 80%;
+        font-size: 14px;
+        margin: 0;
+        color: #A09B9E;
+      }
+      .btn-join{
+
+        padding: 10px 20px;
+        width: 115px;
+        border: 1px solid #5459E8;
+        background: #5459E8;
+        border-radius: 10px;
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .btn-join:hover{
+        background: transparent;
+        color: #000;
+        cursor: pointer;
+      }
+    }
+    .image{
+      display: flex;
+      flex-direction: column;
+      img{
+        height: 220px;
+      }
+    }
+  }
+}
+
+
+.box{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  .box-pricing{
+      height: 520px;
+      width: 350px;
+      background: #fff;
+      box-shadow: 0px 0px 10px 0.5px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      padding: 20px 0;
+
+      .caption{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          // gap: 10px;
+          h2{
+              font-size: 25px;
+              color: #444D56;
+              font-family: 'Open Sans', sans-serif;
+          }
+          p{
+              width: 250px;
+              text-align: center;
+              font-size: 14px;
+              color: #70787F;
+              font-family: 'Open Sans', sans-serif;
+
+          }
+          h3{
+              font-size: 25px;
+              color: #454E57;
+              font-family: 'Open Sans', sans-serif;
+              span{
+                  font-size: 14px;
+                  color: #6C757C;
+                  font-family: 'Open Sans', sans-serif;
+              }
+          }
+          button{
+              padding: 10px 60px;
+              font-family: 'Open Sans', sans-serif;
+              border: 1px solid #5459E8;
+              border-radius: 5px;
+              background: #fff;
+              color: #5459E8;
+              cursor: pointer;
+              transition: 0.3s;
+          }
+          button:hover{
+              background:#5459E8 ;
+              color: #fff;
+          }
+      }
+      .important{
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 30px 0;
+          .check{
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 10px;
+              padding: 2px 50px;
+              i{
+                  color: #5459E8;
+              }
+              p{
+                  font-family: 'Open Sans', sans-serif;
+                  font-size: 14px;
+                  margin: 0;
+              }
+          }
+      }
+  }
+  .box-pricing:hover{
+      box-shadow: 0px 0px 20px 0.5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+
+.footer{
+  height: 40vh;
+  width: 100%;
+  background: #F9F9F9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  footer{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 100px;
+      padding: 10px 0;
+      .footer-container{
+          h3{
+              font-size: 16px;
+              padding: 8px 0;
+              font-family: 'Open Sans', sans-serif;
+              color: #444D56;
+              margin: 0;
+          }
+          ul{
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+              li{
+                  font-size: 14px;
+                  list-style: none;
+                  font-family: 'Open Sans', sans-serif;
+                  color: #A4AAAE;
+                  cursor: pointer;
+                  transition: 0.3s;
+              }
+              li:hover{
+                  color: #005;
+              }
+          }
+          .caption{
+              width: 400px;
+              font-size: 14px;
+              font-family: 'Open Sans', sans-serif;
+              color: #A4AAAE;
+          }
+          .subscribe{
+              display: flex;
+              flex-direction: row;
+              gap: 10px;
+              padding: 10px 0;
+              input{
+                  padding: 10px 40px;
+                  font-family: 'Open Sans', sans-serif;
+                  border: 1px solid #EAEAEA;
+                  border-radius: 5px;
+                  outline: none;
+              }
+              button{
+                  padding: 5px 20px;
+                  background: #5459E8;
+                  border: 1px solid #5459E8;
+                  border-radius: 10px;
+                  color: #fff;
+                  cursor: pointer;
+              }
+              button:hover{
+                  background: #fff;
+                  color: #000;
+              }
+          }
+      }
+  }
+  .line{
+      border: 0.5px solid #E2E2E2;
+
+  }
+  .privacy{
+      padding: 15px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 70px;
+      p{
+          font-size: 14px;
+          font-family: 'Open Sans', sans-serif;
+          color: #79818A;
+          margin: 0;
+      }
+      .follow{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+          p{
+              font-size: 14px;
+              color: #79818A;
+              font-family: 'Open Sans', sans-serif;
+              margin: 0;
+          }
+          .icon{
+              display: flex;
+              flex-direction: row;
+              gap: 5px;
+              i{
+                  background: #5459E8;
+                  padding: 9px 10px;
+                  border-radius: 50%;
+                  border: 1px solid #999;
+                  color: #fff;
+                  cursor: pointer;
+              }
+              i:hover{
+                  background: #fff;
+                  color: #000;
+              }
+          }
+      }
+  }
+}
+@media screen and (max-width: 1024px){
+  body{
+    height: auto;
+  }
+  body .courses-container{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  body .courses-container .caption{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  body .courses-container .caption p{
+    text-align: center;
+  }
+
+  .box {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  .box .box-pricing{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer{
+      height: auto;
+  }
+  .footer footer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .footer .privacy{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+}
+@media screen and (max-width: 500px){
+  .footer footer .footer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer footer .footer-container .caption{
+    width: 70%;
+    text-align: center;
+  }
+}

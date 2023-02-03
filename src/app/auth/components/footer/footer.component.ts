@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  profileForm = new FormGroup({
+    email: new FormControl(''),
+    });
+  constructor(private auth : AngularFireAuthModule,
+    private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
+  register(f: any){
+    const {email} = f;
+    console.log('f');
+  }
 }

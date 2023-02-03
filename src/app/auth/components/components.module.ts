@@ -4,11 +4,17 @@ import { CommonModule } from '@angular/common';
 import { ComponentsRoutingModule } from './components-routing.module';
 
 
+
 @NgModule({
-  declarations: [],
+  declarations: [
+
+
+  ],
   imports: [
     CommonModule,
-    ComponentsRoutingModule
+    ComponentsRoutingModule,
+
+    // RouterModule
   ]
 })
 export class ComponentsModule { }

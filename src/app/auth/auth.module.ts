@@ -7,12 +7,13 @@ import { ComponentsComponent } from './components/components.component';
 import { AppComponent } from '../app.component';
 
 import { SwiperModule } from 'swiper/angular';
+import { FormsModule } from '@angular/forms';
+import { BottomSheetOverviewExampleSheet } from './components/category/category.component';
 
 @NgModule({
   declarations: [
 
     AppComponent,
-
 
     // ComponentsComponent,
 
@@ -21,6 +22,7 @@ import { SwiperModule } from 'swiper/angular';
     CommonModule,
     AuthRoutingModule,
     SwiperModule,
+    FormsModule,
   ]
 })
 export class AuthModule { }

@@ -10,30 +10,190 @@
           <span></span>
         </div> -->
       </div>
-      <i class="fa-solid fa-school"></i>
-      <p>HENG</p>
+      <!-- <i class="fa-solid fa-school"></i> -->
+      <svg id="Layer_1" enable-background="new 0 0 512 512" height="35" viewBox="0 0 512 512" width="35" xmlns="http://www.w3.org/2000/svg"><path d="m113.352 245.994h-102.772l69.95-49.354h79.488zm285.296 0h102.772l-69.95-49.354h-79.489zm-197.903 266.006h44.68v-147.085h-44.68zm61.196 0h44.679v-147.085h-44.679zm248.256-249.49v249.49h-187.06v-155.343-8.258h-8.258-52.938-16.516-52.938-8.258v8.258 155.343h-182.426v-249.49h118.663l67.767-71.67 59.509-62.936v-127.904h16.516 90.546l-4.254 2.77-47.796 31.123 47.796 31.124 4.254 2.769h-90.546v60.117l59.509 62.936 67.767 71.67h118.663zm-429.311 167.582h-47.073v47.073h47.073zm0-73.435h-47.073v47.073h47.073zm75.318 73.435h-47.073v47.073h47.073zm0-73.435h-47.073v47.073h47.073zm138.396-88.499c0-21.318-17.282-38.6-38.6-38.6s-38.6 17.282-38.6 38.6 17.282 38.601 38.6 38.601 38.6-17.282 38.6-38.601zm108.269 161.934h-47.073v47.073h47.073zm0-73.435h-47.073v47.073h47.073zm75.318 73.435h-47.073v47.073h47.073zm0-73.435h-47.073v47.073h47.073z"/></svg>
+      <p>SCHOOL</p>
     </div>
     <div class="menu">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Teachers</a></li>
-        <li><a href="#">Classes</a></li>
-        <li><a href="#">Contact us</a></li>
+        <li class="dropdown">
+          <p  [routerLink]="['../home']" routerLinkActive="active" style="padding: 0 4px;">Home</p>
+          <div class="dropdown-content">
+            <div class="navbar">
+              <div class="dd_menu">
+                <div class="home">
+                  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                    <!-- Leaf node -->
+                    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                      <button mat-icon-button disabled></button>
+                      {{node.item}}
+                    </mat-tree-node>
+
+                    <!-- expandable node -->
+                    <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                      <button mat-icon-button
+                              [attr.aria-label]="'Toggle ' + node.item"
+                              (click)="loadChildren(node)"
+                              matTreeNodeToggle>
+                        <mat-icon class="mat-icon-rtl-mirror">
+                          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                        </mat-icon>
+                      </button>
+                      {{node.item}}
+                    </mat-tree-node>
+
+                    <mat-tree-node *matTreeNodeDef="let node; when: isLoadMore">
+                      <button mat-button (click)="loadMore(node.loadMoreParentItem)">
+                        Load more...
+                      </button>
+                    </mat-tree-node>
+                  </mat-tree>
+                </div>
+              </div>
+            </div>
+          </div>
+        <li class="dropdown">
+          <p  [routerLink]="['../teacher']" routerLinkActive="active">Teachers</p>
+          <div class="dropdown-content">
+            <div class="navbar">
+              <div class="dd_menu">
+                <div class="home">
+                  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                    <!-- Leaf node -->
+                    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                      <button mat-icon-button disabled></button>
+                      {{node.item}}
+                    </mat-tree-node>
+
+                    <!-- expandable node -->
+                    <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                      <button mat-icon-button
+                              [attr.aria-label]="'Toggle ' + node.item"
+                              (click)="loadChildren(node)"
+                              matTreeNodeToggle>
+                        <mat-icon class="mat-icon-rtl-mirror">
+                          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                        </mat-icon>
+                      </button>
+                      {{node.item}}
+                    </mat-tree-node>
+
+                    <mat-tree-node *matTreeNodeDef="let node; when: isLoadMore">
+                      <button mat-button (click)="loadMore(node.loadMoreParentItem)">
+                        Load more...
+                      </button>
+                    </mat-tree-node>
+                  </mat-tree>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </li>
+        <li class="dropdown">
+          <p [routerLink]="['../classes']" routerLinkActive="active" >Courses</p>
+          <div class="dropdown-content">
+            <div class="navbar">
+              <div class="dd_menu">
+                <div class="home">
+                  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                    <!-- Leaf node -->
+                    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                      <button mat-icon-button disabled></button>
+                      {{node.item}}
+                    </mat-tree-node>
+
+                    <!-- expandable node -->
+                    <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                      <button mat-icon-button
+                              [attr.aria-label]="'Toggle ' + node.item"
+                              (click)="loadChildren(node)"
+                              matTreeNodeToggle>
+                        <mat-icon class="mat-icon-rtl-mirror">
+                          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                        </mat-icon>
+                      </button>
+                      {{node.item}}
+                    </mat-tree-node>
+
+                    <mat-tree-node *matTreeNodeDef="let node; when: isLoadMore">
+                      <button mat-button (click)="loadMore(node.loadMoreParentItem)">
+                        Load more...
+                      </button>
+                    </mat-tree-node>
+                  </mat-tree>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="dropdown">
+          <p [routerLink]="['../contact']" routerLinkActive="active" >Contact Us</p>
+          <div class="dropdown-content">
+            <div class="navbar">
+              <div class="dd_menu">
+                <div class="home">
+                  <mat-tree  [dataSource]="dataSource" [treeControl]="treeControl">
+                    <!-- Leaf node -->
+                    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                      <button mat-icon-button disabled></button>
+                      {{node.item}}
+                    </mat-tree-node>
+
+                    <!-- expandable node -->
+                    <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                      <button mat-icon-button
+                              [attr.aria-label]="'Toggle ' + node.item"
+                              (click)="loadChildren(node)"
+                              matTreeNodeToggle>
+                        <mat-icon class="mat-icon-rtl-mirror">
+                          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                        </mat-icon>
+                      </button>
+                      {{node.item}}
+                    </mat-tree-node>
+                    <mat-tree-node *matTreeNodeDef="let node; when: isLoadMore">
+                      <button mat-button (click)="loadMore(node.loadMoreParentItem)">
+                        Load more...
+                      </button>
+                    </mat-tree-node>
+                  </mat-tree>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
     <div class="menu-1" [ngClass]="isMenu?'isMenu':''" >
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Teachers</a></li>
-        <li><a href="#">Classes</a></li>
-        <li><a href="#">Contact us</a></li>
+        <li [routerLink]="['../home']" routerLinkActive="active">Home</li>
+        <li [routerLink]="['../teacher']" routerLinkActive="active">Teachers</li>
+        <li [routerLink]="['../classes']" routerLinkActive="active">Courses</li>
+        <li [routerLink]="['../contact']" routerLinkActive="active">Contact us</li>
       </ul>
     </div>
-    <div class="btn-register">
+    <!-- <div class="btn-register">
       <button class="btn-login" [routerLink]="['../login']" routerLinkActive="active">Login</button>
       <button class="btn-sign-up" [routerLink]="['../signup']" routerLinkActive="active">Sign Up</button>
 
+    </div> -->
+    <!-- <div class="profile">
+      <p>{{dataUser?.displayName}}</p>
+      <img  [src]="dataUser?.files?.downloadUrl ?? 'assets/user.png'" alt="" [routerLink]="['../profile']" routerLinkActive="active">
+    </div> -->
+    <div class="profile">
+      <p>{{dataUser?.displayName}}</p>
+      <img mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"  [src]="dataUser?.files?.downloadUrl ?? 'assets/user.png'" alt="">
+      <!-- <mat-icon>more_vert</mat-icon> -->
     </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['../profile']" routerLinkActive="active">
+        <mat-icon style="color: #5459E8;">person</mat-icon>
+        <span>Profile</span>
+      </button>
+
+    </mat-menu>
   </div>
 </body>
 
