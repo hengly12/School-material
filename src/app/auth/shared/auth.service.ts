@@ -1,4 +1,5 @@
 import { map } from 'rxjs/operators';
+import { GENDER } from 'src/app/dummy/country';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -9,10 +10,13 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   providedIn: 'root'
 })
 export class AuthService {
-userData: any = null
+userData:any = null;
+phone:string = '';
+nameof:string = '';
+relationship:string = '';
 
   constructor(
-     private fireauth : AngularFireAuth,
+    private fireauth : AngularFireAuth,
     private router : Router,
     private afs: AngularFirestore) { }
 
@@ -30,7 +34,7 @@ userData: any = null
   signOut(){
     this.fireauth.signOut().then( () =>{
       // '/auth/login' ||
-      this.router.navigate(['../../'])
+      this.router.navigate(['../auth'])
 
     }).catch(err => {
       alert("!System error." + err)
@@ -71,7 +75,7 @@ userData: any = null
   setUser(user: any){
     console.log('useruser', user);
     let file = new Map().set;
-    const {key, email, first_name, last_name } = user
+    const {key, email, first_name, last_name, } = user
     const displayName = last_name + ' ' + first_name
     const item = {
       key,
@@ -80,7 +84,10 @@ userData: any = null
       displayName: displayName ? displayName : '',
       email: email,
       create_at: new Date(),
-      // files: file = null,
+      phone:this.phone='',
+      nameof:this.nameof='',
+      relationship:this.relationship='',
+      // files: file =null,
     }
 
     console.log('item', item);
@@ -114,6 +121,10 @@ userData: any = null
         bd: item.birthday,
         hometown: item.hometown,
         status: item.status,
+        phone: item.phone,
+        nameof: item.nameof,
+        relationship: item.relationship,
+
       }
       console.log('currentUser', currentUser);
 

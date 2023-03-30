@@ -10,6 +10,10 @@ export class LessonComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
 }

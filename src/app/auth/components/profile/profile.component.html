@@ -1,9 +1,13 @@
+<div class="loading">
+  <mat-progress-bar mode="query" *ngIf="loading"></mat-progress-bar>
+</div>
+
 <body>
   <div class="btn-back">
     <button [routerLink]="['/components']" routerLinkActive="active"><i class="fa-solid fa-arrow-left-long"></i></button>
   </div>
   <div class="container">
-    <div class="profile-container">
+    <div class="profile-container"  [formGroup]="profileForm">
       <div class="profile">
         <div class="image" >
           <img [src]="dataUser?.files?.downloadUrl ?? 'assets/user.png'" alt="profile" (click)="inputFile.click()">
@@ -22,12 +26,103 @@
       </div>
       <div class="box1">
         <div class="box">
-          <p>Change your profile</p>
+          <!-- <p>Change your profile</p> -->
+          <div class="name">
+            <p style="margin:0; color: var(--p-color);">First Name</p>
+            <input type="text" formControlName="first_name">
+          </div>
+
+          <div class="name">
+              <p style="margin:0;color: var(--p-color);">Last Name</p>
+              <input type="text" formControlName="last_name">
+          </div>
         </div>
-      </div>
-      <div class="btn">
-        <p></p>
-        <button (click)="onSave(profileForm.value)">Save</button>
+        <div class="box2">
+          <div class="status">
+            <p style="margin:0; color: var(--p-color);">Relationship</p>
+            <!-- <select class="dynamic-form" formControlName="country">
+                <option *ngFor="let item of COUNTRY" [value]="item">{{item?.name + ' '+ item?.name_kh}}</option>
+            </select> -->
+            <mat-form-field style="border: 1px solid #fff; background: #F2F7FA;" appearance="fill">
+                <mat-label style="color:var(--p-color);">Select Relationship</mat-label>
+                <mat-select [compareWith]="compareWithFn" formControlName="status" required>
+                  <mat-option *ngFor="let item of STATUS" [value]="item" >
+                    {{item.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div class="gender">
+              <p style="margin:0; color: var(--p-color);">Sex</p>
+              <mat-form-field style="border: 1px solid #fff; background: #F2F7FA;" appearance="fill">
+                  <mat-label style="color:var(--p-color);">Sex</mat-label>
+                  <mat-select [compareWith]="compareWithFn" formControlName="gender" required>
+                    <mat-option *ngFor="let item of GENDER" [value]="item" class="itemname">
+                      {{item.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </div>
+        </div>
+        <div class="box3">
+          <div class="birthday-container">
+              <p style="margin:0;color: var(--p-color);">Birthday</p>
+              <div class="birthday">
+                  <!-- <div class="year">
+                      <input type="text" placeholder="YYY">
+                  </div>
+                  <div class="month">
+                      <input type="text" placeholder="MM">
+                  </div>
+                  <div class="day">
+                      <input type="text" placeholder="DD">
+                  </div> -->
+
+                  <mat-form-field (click)="picker.open()"  style="border: 1px solid #fff; background: #F2F7FA;" class="example-full-width" appearance="fill" >
+                      <mat-label  style="color:var(--p-color);">Choose a Birthday</mat-label>
+                      <input  matInput [matDatepicker]="picker" formControlName="birthday">
+                      <mat-hint style="color:var(--p-color);" >MM/DD/YYYY</mat-hint>
+                      <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                  <!-- <button mat-raised-button (click)="picker.open()">Open</button> -->
+              </div>
+          </div>
+
+          <div class="home">
+              <p style="margin:0; color: var(--p-color);">Hometown</p>
+              <mat-form-field  style="border: 1px solid #fff; background: #F2F7FA;"  appearance="fill">
+                  <mat-label style="color:var(--p-color);margin: 0;">Select Hometown</mat-label>
+                  <mat-select [compareWith]="compareWithFn" formControlName="hometown" required >
+                    <mat-option  *ngFor="let item of PROVINCE" [value]="item" >
+                      {{item.name}}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </div>
+        </div>
+        <div class="emergency">
+          <p>Emergency Contact</p>
+          <div class="emergency-container">
+            <div class="phone-number">
+              <p style="margin:0; color: var(--p-color);">Phone Number</p>
+              <input type="text" formControlName="phone" placeholder="Phone number">
+            </div>
+            <div class="name-emergency">
+              <p style="margin:0; color: var(--p-color);">Name</p>
+              <input type="text" formControlName="nameof" placeholder="Your ther or mother name">
+            </div>
+            <div class="relationship">
+              <p style="margin:0; color: var(--p-color);">Relationship</p>
+              <input type="text" formControlName="relationship" placeholder="Relationship of you">
+            </div>
+          </div>
+        </div>
+        <div class="btn">
+          <p></p>
+          <button (click)="onSave(profileForm.value)"
+          (click)="saveImf(dataUser)">Save</button>
+        </div>
       </div>
     </div>
   </div>

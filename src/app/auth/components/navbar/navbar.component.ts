@@ -1,10 +1,12 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, Renderer2, Injectable} from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {FlatTreeControl} from '@angular/cdk/tree';
-
+import { AuthService } from '../../shared/auth.service';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {BehaviorSubject, Observable} from 'rxjs';
+import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 const LOAD_MORE = 'LOAD_MORE';
 
@@ -30,6 +32,7 @@ export class LoadmoreFlatNode {
     public level = 1,
     public expandable = false,
     public loadMoreParentItem: string | null = null,
+
   ) {}
 }
 
@@ -102,21 +105,29 @@ export class NavbarComponent implements OnInit {
   uid: string = '';
 
   theme: Theme = 'light-theme';
+  loading:boolean= true;
+  inOut:string='';
 
   nodeMap = new Map<string, LoadmoreFlatNode>();
   treeControl: FlatTreeControl<LoadmoreFlatNode>;
   treeFlattener: MatTreeFlattener<LoadmoreNode, LoadmoreFlatNode>;
   // Flat tree data source
   dataSource: MatTreeFlatDataSource<LoadmoreNode, LoadmoreFlatNode>;
-  document: any;
-  renderer: any;
+  auth: any;
+
   constructor(
     private fireauth : AngularFireAuth,
-    private afs: AngularFirestore,private _database: LoadmoreDatabase) { this.treeFlattener = new MatTreeFlattener(
+    private afs: AngularFirestore,
+    private _database: LoadmoreDatabase,
+    private router : Router,
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2
+    ) { this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
       this.isExpandable,
       this.getChildren,
+
     );this.treeControl = new FlatTreeControl<LoadmoreFlatNode>(this.getLevel, this.isExpandable);
 
     this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
@@ -163,6 +174,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loading=true;
     this.fireauth.authState.subscribe( user => {
       console.log('user', user);
       if(user){
@@ -174,10 +186,48 @@ export class NavbarComponent implements OnInit {
         this.dataUser = res;
       })
 
+      this.loading=false;
+    })
+
+
+    this.fireauth.authState.subscribe( user => {
+      if(user){
+        this.uid = user?.uid;
+        this.inOut='Sign out'
+      }else{
+        this.router.navigate(['/auth/login'])
+        this.inOut='Sign in'
+      }
+
+      this.afs.collection("user").doc(this.uid).valueChanges().subscribe(res => {
+        console.log('res', res);
+        this.dataUser = res;
+      })
+    })
+
+    this.initializeTheme();
+  }
+  // signOut(){
+  //   if(this.dataUser != ''){
+  //     this.loading = true;
+  //     this.auth.signOut();
+  //     this.loading = false;
+  //   }else{
+  //     this.router.navigate(['/auth/login'])
+  //   }
+  // }
+
+  signOut(){
+    this.fireauth.signOut().then( () =>{
+      // '/auth/login' ||
+      this.router.navigate(['../../../'])
+
+    }).catch(err => {
+      alert("!System error." + err)
     })
   }
 //////////////////////////////////////////////////////////////////////
-
+panelOpenState = false;
   // isMenuOpen = false;
   // toggleMenu(): void{
   //   this.isMenuOpen = !this.isMenuOpen;
@@ -191,6 +241,17 @@ export class NavbarComponent implements OnInit {
     this.isMenu = !this.isMenu;
     this.menuo = !this.menuo;
     this.menuc = !this.menuc;
+  }
+
+
+  // isdarkMode:boolean = false;
+  dark= true;
+  night= false;
+
+  toggleDark(){
+    // this.isMenu = !this.isMenu;
+    this.dark = !this.dark;
+    this.night = !this.night;
   }
 
   switchTheme() {

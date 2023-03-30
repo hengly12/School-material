@@ -7,7 +7,7 @@
 body{
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(to left, rgb(215, 100, 100),rgb(53, 53, 185));
+  background: var(--background-contact);
   display: flex;
   flex-direction: column;
   // gap: 20px;
@@ -41,7 +41,7 @@ body{
     h3{
       font-size: 30px;
       // color: #454E5C;
-      color: #fff;
+      color: var(--h3-contact);
       font-family: 'Open Sans', sans-serif;
       padding: 0 110px;
       margin: 0;
@@ -74,7 +74,7 @@ body{
 .footer{
   height: 40vh;
   width: 100%;
-  background: #F9F9F9;
+  background: var(--background-footer);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,7 +89,7 @@ body{
               font-size: 16px;
               padding: 8px 0;
               font-family: 'Open Sans', sans-serif;
-              color: #444D56;
+              color: var(--h3-color);
               margin: 0;
           }
           ul{
@@ -100,19 +100,19 @@ body{
                   font-size: 14px;
                   list-style: none;
                   font-family: 'Open Sans', sans-serif;
-                  color: #A4AAAE;
+                  color: var(--li-footer);
                   cursor: pointer;
                   transition: 0.3s;
               }
               li:hover{
-                  color: #005;
+                  color: var(--li-hover);
               }
           }
           .caption{
               width: 400px;
               font-size: 14px;
               font-family: 'Open Sans', sans-serif;
-              color: #A4AAAE;
+              color: var(--li-footer);
           }
           .subscribe{
               display: flex;
@@ -155,7 +155,7 @@ body{
       p{
           font-size: 14px;
           font-family: 'Open Sans', sans-serif;
-          color: #79818A;
+          color: var(--p-color);
           margin: 0;
       }
       .follow{
@@ -165,7 +165,7 @@ body{
           gap: 20px;
           p{
               font-size: 14px;
-              color: #79818A;
+              color: var(--p-color);
               font-family: 'Open Sans', sans-serif;
               margin: 0;
           }

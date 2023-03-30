@@ -13,7 +13,7 @@ import { NavbarComponent } from './auth/components/navbar/navbar.component';
 import { ImproveComponent } from './auth/components/improve/improve.component';
 import { CourzeesComponent } from './auth/components/courzees/courzees.component';
 import { TopCoursesComponent } from './auth/components/top-courses/top-courses.component';
-import { BottomSheetOverviewExampleSheet, CategoryComponent } from './auth/components/category/category.component';
+import { BottomSheetOverviewCSS, BottomSheetOverviewExampleSheet, BottomSheetOverviewJava, BottomSheetOverviewPhp, CategoryComponent } from './auth/components/category/category.component';
 import { PricingComponent } from './auth/components/pricing/pricing.component';
 import { TestimonialComponent } from './auth/components/testimonial/testimonial.component';
 import { FooterComponent } from './auth/components/footer/footer.component';
@@ -22,19 +22,25 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthModule } from './auth/auth.module';
 import { RouterModule } from '@angular/router';
-import { ProfileComponent } from './auth/components/profile/profile.component';
+import { EditProfileComponent } from './auth/components/profile/profile.component';
 import { HomeComponent } from './auth/components/home/home.component';
 import { TeacherComponent } from './auth/components/teacher/teacher.component';
 import { ClassesComponent } from './auth/components/classes/classes.component';
 import { ContactComponent } from './auth/components/contact/contact.component';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
-import { MaterialModule } from './auth/shared/meterial.module';
+// import { MaterialModule } from './auth/shared/meterial.module';
 import { VideoComponent } from './auth/components/video/video.component';
 import { LessonComponent } from './auth/components/lesson/lesson.component';
-import { OnlineClassComponent } from './auth/components/online-class/online-class.component';
 import { ScheduleComponent } from './auth/components/schedule/schedule.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MaterialModule } from './auth/shared/materials.module';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HtmlComponent } from './auth/components/html/html.component';
+import { CssComponent } from './auth/components/css/css.component';
+import { PhpComponent } from './auth/components/php/php.component';
+import { JavaComponent } from './auth/components/java/java.component';
 @NgModule({
     declarations: [
       SignupComponent,
@@ -48,18 +54,22 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
       FooterComponent,
       ComponentsComponent,
       LoginComponent,
-      ProfileComponent,
+      EditProfileComponent,
       HomeComponent,
       TeacherComponent,
       ClassesComponent,
       ContactComponent,
       VideoComponent,
       LessonComponent,
-      OnlineClassComponent,
       ScheduleComponent,
       BottomSheetOverviewExampleSheet,
-
-
+      BottomSheetOverviewCSS,
+      BottomSheetOverviewJava,
+      BottomSheetOverviewPhp,
+      HtmlComponent,
+      CssComponent,
+      PhpComponent,
+      JavaComponent,
 
 
     ],
@@ -79,7 +89,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         AuthModule,
         RouterModule,
         MaterialModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatNativeDateModule,
+        MatAutocompleteModule,
+        MatProgressSpinnerModule,
     ]
 })
 export class AppModule { }

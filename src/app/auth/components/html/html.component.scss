@@ -1,0 +1,94 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  .btn-back{
+    padding: 15px 30px;
+    // position: absolute;
+    button{
+      padding: 10px 30px;
+      background: #5459E8;
+      border-radius: 5px;
+      border: 1px solid #5459E8;
+      cursor: pointer;
+      i{
+        color: #fff;
+        font-size: 16px;
+      }
+      i:hover{
+        color: #000;
+      }
+    }
+    button:hover{
+      background: #cdcef7;
+      color: #000;
+    }
+  }
+  .html-container{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+      text-align: center;
+      font-size: 25px;
+      padding: 20px 0;
+      color: var(--h3-color);
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .box-html{
+      height: 100vh;
+      width: 70%;
+      background: #D9EEE1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 25px 0;
+      gap: 10px;
+      h3{
+        font-size: 18px;
+        margin: 0;
+        color: #737A81;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .button{
+        padding: 10px 25px;
+        border: 1px solid #5459E8;
+        background: #5459E8;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .button:hover{
+        background: transparent;
+        color: #000;
+      }
+      iframe{
+        height: 90vh;
+        width: 85%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1366px){
+  body .html-container .box-html{
+    height: auto;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px){
+  body .html-container h2{
+    font-size: 20px;
+  }
+  body .lesson-container .box-html iframe{
+    width: 90%;
+  }
+}

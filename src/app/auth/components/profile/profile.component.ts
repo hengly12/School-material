@@ -1,26 +1,31 @@
+// import { GENDER } from './../../../dummy/country';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormControl, FormGroup } from '@angular/forms';
-
+import { STATUS, GENDER } from 'src/app/dummy/country';
+import { PROVINCE } from 'src/app/dummy/country';
 import { AuthService } from '../../shared/auth.service';
 import {Observable} from 'rxjs';
 
 import {endWith, map, startWith} from 'rxjs/operators';
-import { Router } from '@angular/router';
 import { FireStorageService } from '../../shared/services/fire-storage-service.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class EditProfileComponent implements OnInit {
   uid: string = '';
   dataUser: any = null;
-
+  STATUS = STATUS;
+  GENDER = GENDER;
+  PROVINCE = PROVINCE;
 
   /////uploade/////
   message: string='';
@@ -44,6 +49,9 @@ export class ProfileComponent implements OnInit {
     province: new FormControl(''),
     birthday: new FormControl(''),
     hometown: new FormControl(''),
+    phone: new FormControl(''),
+    nameof:new FormControl(''),
+    relationship: new FormControl(''),
     });
 
   inputFile: any;
@@ -79,9 +87,14 @@ export class ProfileComponent implements OnInit {
         this.profileForm.patchValue({
           last_name: this.dataUser?.last_name || null,
           first_name: this.dataUser?.first_name || null,
-
+          status: this.dataUser?.status ? this.dataUser?.status : this.STATUS[0],
+          province: this.dataUser?.province? this.dataUser?.province : this.PROVINCE[0],
+          gender: this.dataUser?.gender ? this.dataUser?.gender : this.GENDER[0],
           birthday: this.dataUser?.bd ? this.dataUser?.bd?.toDate() : null,
-
+          hometown: this.dataUser?.hometown ? this.dataUser?.hometown : this.STATUS[0],
+          phone: this.dataUser?.phone || null,
+          nameof:this.dataUser?.nameof || null,
+          relationship:this.dataUser?.relationship || null,
         })
 
         console.log('this.profileForm', this.profileForm);
@@ -114,7 +127,7 @@ export class ProfileComponent implements OnInit {
       files: this.dataUser?.files ? this.dataUser?.files : null,
       ...f
     }
-    console.log('onsave', );
+    console.log('onsave');
 
     const selectedCoverFiles:any[]=[];
 
@@ -133,6 +146,11 @@ export class ProfileComponent implements OnInit {
 
 
         let fileType = file.type.split('/').slice(0, -1).join('/');
+        const imf ={
+          phone: file.phone,
+          nameof: file.nameof,
+          relationship: file.relationship,
+        }
         const files = {
           key: this.afs.createId(),
           filename: soundPath,
@@ -143,6 +161,7 @@ export class ProfileComponent implements OnInit {
           fileSize: file.size,
         }
 
+        // this.afs.collection("user").doc().set(imf, {merge: true})
         selectedCoverFiles.push(files)
         this.START_UPLOAD = false;
       }
@@ -152,7 +171,16 @@ export class ProfileComponent implements OnInit {
     this.loading=false;
     this.as.updateUser(data)
     this.router.navigate(['/home/profile']);
-    alert("Your profile was updated")
+    alert("Your profile was updated '3'")
+  }
+
+  saveImf(user: any){
+    const imf ={
+      phone: user.phone,
+      nameof: user.nameof,
+      relationship: user.relationship,
+    }
+    this.afs.collection("user").doc(user.key).set(imf, {merge: true})
   }
 
 

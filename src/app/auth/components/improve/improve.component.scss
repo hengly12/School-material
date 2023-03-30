@@ -18,6 +18,7 @@ body{
   font-family: 'Raleway', sans-serif;
   color: #FFF;
   font-size: 1.75vw;
+
   position: relative;
   z-index: 1;
    *{
@@ -70,6 +71,7 @@ body{
   .slider > #input-slide-3:checked ~ ul > li.slide-3{
     opacity: 1;
     z-index: 2;
+
   }
   .slider > ul > li.slide-0{
 
@@ -113,6 +115,7 @@ body{
     top: 50%;
     left: 0;
     z-index: 300;
+
   }
   .slider > .slider-arrow-prev > label,
   .slider > .slider-arrow-next > label {
@@ -136,6 +139,7 @@ body{
   .slider > #input-slide-3:checked ~ .slider-arrow-prev > label.slide-2,
   .slider > #input-slide-3:checked ~ .slider-arrow-next > label.slide-0 {
     z-index: 1;
+
   }
 
   .slider > .slider-dot {
@@ -342,10 +346,11 @@ body{
         border-radius: 10px;
         color: #fff;
         font-family: 'Open Sans', sans-serif;
+        transition: 0.3s;
       }
       .btn-get-start:hover{
         background: transparent;
-        color: #000;
+        color: #fff;
         cursor: pointer;
       }
       .video{
@@ -399,7 +404,7 @@ body{
   .pic{
     img{
       height: 300px;
-      width: auto;
+
     }
 
   }
@@ -450,6 +455,7 @@ body{
 }
 }
 @media screen and (max-width: 500px){
+
   .container{
     height: auto;
     display: flex;

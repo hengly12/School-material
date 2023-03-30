@@ -8,6 +8,9 @@ import { AuthService } from '../shared/auth.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  phone:string ='';
+  nameof:string = '';
+  relationship:string='';
 
   profileForm = new FormGroup({
     last_name: new FormControl(''),
@@ -29,7 +32,6 @@ export class SignupComponent implements OnInit {
 
   register(f: any){
     const {email, password, Repassword, checkbox} = f;
-    console.log('checkbox',checkbox);
 
     if (email == '') {
       alert('!Please, Enter email.');

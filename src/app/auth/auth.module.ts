@@ -10,10 +10,12 @@ import { SwiperModule } from 'swiper/angular';
 import { FormsModule } from '@angular/forms';
 import { BottomSheetOverviewExampleSheet } from './components/category/category.component';
 
+
 @NgModule({
   declarations: [
 
     AppComponent,
+
 
     // ComponentsComponent,
 

@@ -6,7 +6,8 @@
 body{
     height: 100vh;
     width: 100%;
-
+    padding: 20px 0;
+    background: var(--background-color);
     .caption-container{
         width: 100%;
         display: flex;
@@ -16,7 +17,7 @@ body{
         h2{
             width: 100%;
             font-size: 35px;
-            color: #454E57;
+            color: var(--h3-color);
             font-family: 'Open Sans', sans-serif;
             margin: 0;
 
@@ -25,7 +26,7 @@ body{
         p{
             width: 100%;
             font-size: 14px;
-            color: #7B848A;
+            color: var(--p-color);
             font-family: 'Open Sans', sans-serif;
             padding: 20px 0;
             margin: 0;
@@ -39,15 +40,15 @@ body{
         gap: 20px;
         p{
             font-size: 14px;
-            color: #7B848A;
+            color: var(--p-color);
             font-family: 'Open Sans', sans-serif;
             margin: 0;
         }
         .switch {
             position: relative;
             display: inline-block;
-            width: 174px;
-            height: 34px;
+            width: 179px;
+            height: 35.5px;
         }
 
         .switch input {
@@ -63,7 +64,8 @@ body{
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #F3F2FF;
+            background-color: var(--background-color);
+            border: 1px solid #5459E8;
             -webkit-transition: .4s;
             transition: .4s;
         }
@@ -112,8 +114,9 @@ body{
         .box-pricing{
             height: 520px;
             width: 350px;
-            background: #fff;
-            box-shadow: 0px 0px 10px 0.5px rgba(0, 0, 0, 0.2);
+            background: var(--background-color);
+            border: 1px solid #fff;
+            box-shadow: var(--shadow-color);
             border-radius: 10px;
             display: flex;
             flex-direction: column;
@@ -127,27 +130,29 @@ body{
                 // gap: 10px;
                 h2{
                   font-size: 25px;
-                  color: #444D56;
+                  color: var(--h3-color);
                   font-family: 'Open Sans', sans-serif;
+                  margin: 0;
 
                 }
                 p{
                   width: 250px;
                   text-align: center;
                   font-size: 14px;
-                  color: #70787F;
+                  color: var(--p-color);
                   font-family: 'Open Sans', sans-serif;
                   margin: 0;
 
                 }
                 h3{
                   font-size: 25px;
-                  color: #454E57;
+                  color: var(--h3-color);
                   font-family: 'Open Sans', sans-serif;
+
 
                     span{
                       font-size: 14px;
-                      color: #6C757C;
+                      color: var(--h3-color);
                       font-family: 'Open Sans', sans-serif;
                     }
                 }
@@ -156,14 +161,14 @@ body{
                   font-family: 'Open Sans', sans-serif;
                   border: 1px solid #5459E8;
                   border-radius: 5px;
-                  background: #fff;
-                  color: #5459E8;
+                  background: #5459E8;
+                  color: #fff;
                   cursor: pointer;
                   transition: 0.3s;
                 }
                 button:hover{
-                  background:#5459E8 ;
-                  color: #fff;
+                  background:transparent ;
+                  color: var(--p-hover);
                 }
             }
             .important{
@@ -184,6 +189,7 @@ body{
                       font-family: 'Open Sans', sans-serif;
                       font-size: 14px;
                       margin: 0;
+                      color: var(--p-color);
                     }
                 }
             }
